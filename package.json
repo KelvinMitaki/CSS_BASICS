@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "node-sass ./sass/main.scss ./css/style.css -w"
+    "live-server": "live-server",
+    "compile": "node-sass ./sass/main.scss ./css/style.css -w",
+    "start": "concurrently \"npm run compile\" \"npm run live-server\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.3.0",
     "node-sass": "^4.14.1"
   }
 }
