@@ -24,6 +24,7 @@
       text-decoration: none;
       display: inline-block;
       transition: all 0.2s;
+      line-height: 1;
     }
     &:hover {
       color: $color-primary;
@@ -36,11 +37,17 @@
     top: 50%;
     left: 50%;
     width: 75%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
     display: table;
     overflow: hidden;
+    transition: all 0.5s 0.2s;
+  }
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
   &__left {
     width: 33.333333%;
